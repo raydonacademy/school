@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Raydon Academy</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+    body {
+      font-family: 'Poppins', sans-serif;
+      scroll-behavior: smooth;
+      font-size: 1.05rem; /* bump text size */
+    }
+    .dropdown:hover .dropdown-menu {
+      display: block;
+    }
+    .service-card {
+      transition: transform .3s, box-shadow .3s;
+    }
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.12);
+    }
+    .emergency-banner {
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0% { background-color: #ef4444; }
+      50% { background-color: #dc2626; }
+      100% { background-color: #ef4444; }
+    }
+    .logo-circle {
+      width: 50px;
+      height: 50px;
+      background-color: #3b82f6;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .logo-cross {
+      color: white;
+      font-size: 22px;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-700">
+
+<!-- Navigation -->
+<nav class="bg-white shadow-md sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="flex justify-between items-center h-16">
+      
+      <!-- Logo -->
+      <a href="#home" class="flex items-center">
+        <div class="logo-circle mr-2">
+          <img src="https://media.discordapp.net/attachments/963003603663065138/1423713103777894501/RaydonAcademyGlobalSchool.png?ex=68e349e7&is=68e1f867&hm=eb8c4e62ba465783fbb2db376c4e8875aabf2c5f7f67a086be7556e053678069&=&format=webp&quality=lossless&width=656&height=656" 
+            alt="Raydon Academy Logo" class="h-full w-full object-cover">
+        </div>
+        <span class="text-2xl font-bold text-blue-600">Raydon Academy</span>
+      </a>
+
+      <!-- Desktop Nav -->
+      <div class="hidden md:flex items-center space-x-6">
+        <a href="#home" class="hover:text-blue-600 font-medium">Home</a>
+        <a href="#our-services" class="hover:text-blue-600 font-medium">Our Services</a>
+        <a href="#our-leadership" class="hover:text-blue-600 font-medium">Leadership</a>
+        <a href="#about-us" class="hover:text-blue-600 font-medium">About Us</a>
+        <a href="#contact-us" class="hover:text-blue-600 font-medium">Contact Us</a>
+        <a href="https://forms.gle/pzEsLCzxvQA63eZAA" class="hover:text-blue-600 font-medium">Apply As Teacher</a>
+        <button onclick="window.location.href='#enrollment'" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md font-semibold transition">Enroll Today</button>
+      </div>
+
+      <!-- Mobile menu button -->
+      <div class="md:hidden flex items-center">
+        <button class="mobile-menu-button p-2">
+          <svg class="h-6 w-6 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+              d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu hidden md:hidden bg-white shadow-lg px-4 py-3 space-y-2">
+    <a href="#home" class="block hover:text-blue-600">Home</a>
+    <a href="#our-services" class="block hover:text-blue-600">Our Services</a>
+    <a href="#our-leadership" class="block hover:text-blue-600">Leadership</a>
+    <a href="#about-us" class="block hover:text-blue-600">About</a>
+    <a href="#contact-us" class="block hover:text-blue-600">Contact</a>
+    <a href="https://forms.gle/pzEsLCzxvQA63eZAA" class="block hover:text-blue-600">Apply As Teacher</a>
+    <button onclick="window.location.href='#enrollment'" class="w-full bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md font-semibold">Enroll Today</button>
+  </div>
+</nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="bg-blue-50 py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="md:flex items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl font-bold text-gray-800 leading-tight mb-4">
+                        Welcome To<br><span class="text-blue-600">Raydon Academy.</span>
+                    </h1>
+                    <p class="text-lg text-gray-600 mb-8">
+                        Raydon Academy is a world-class online school, shaping futures through quality education, innovation, and care. Our academy offers personalized learning for students of all levels, focusing on academic excellence, creativity, and character development. With dedicated teachers, modern resources, and a nurturing environment, we guide every learner to unlock their full potential and achieve success in school and beyond.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <button onclick="window.location.href='#enrollment'" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md font-medium transition duration-300">
+                            Enroll into our school
+                        </button>
+                        <button onclick="window.location.href='#our-services'" class="bg-white hover:bg-gray-100 text-blue-600 border border-blue-600 px-6 py-3 rounded-md font-medium transition duration-300">
+                            Our Services
+                        </button>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <img src="https://media.discordapp.net/attachments/963003603663065138/1423958703119274045/20251004_150314.jpg?ex=68e385e2&is=68e23462&hm=d0a3f7e3c6941e10aa6ea81b409df37858178c8e2626c3804673ccbd78f8d0a8&=&format=webp&width=590&height=656" alt="Our Virtual Classroom" class="rounded-lg shadow-xl">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="our-services" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Our Educational Services</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    We offer comprehensive education for your children. Our curriculum is beyond the national curriculum, meeting international standards. Here are the services we offer:
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- english-version-section -->
+                <div id="english-version-section" class="service-card bg-white p-6 rounded-lg shadow-md transition duration-300">
+                    <div class="text-blue-600 text-4xl mb-4">
+                        <i class="fa-solid fa-book"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">English Version Section</h3>
+                    <p class="text-gray-600 mb-4">
+At Raydon Academy, our school builds a strong foundation in English for our national curriculum.
+Classes: Class (1 – 9) 
+Curriculum: Aligned with international standards
+Subjects Offered: All subjects offered by Bangladesh National Curriculum Board.
+                    </p>
+                    </button>
+                </div>
+                
+                <!-- english-medium-section -->
+                <div id="english-medium-section" class="service-card bg-white p-6 rounded-lg shadow-md transition duration-300">
+                    <div class="text-blue-600 text-4xl mb-4">
+                        <i class="fa-solid fa-book-atlas"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">English Medium Section</h3>
+                    <p class="text-gray-600 mb-4">
+Our English Medium Section (Std 1 – Std 8) provides a strong academic base with international standards
+Subjects Offered: English, Mathematics, Physics, Chemistry, Biology, Social Studies, ICT, Bangla, Islamic Studies and Moral Education.
+                    </p>
+                    </button>
+                </div>
+                
+                <!-- o-level-section -->
+                <div id="o-level-section" class="service-card bg-white p-6 rounded-lg shadow-md transition duration-300">
+                    <div class="text-blue-600 text-4xl mb-4">
+                        <i class="fa-solid fa-book-open-reader"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">O Level Section (Cambridge & Edexcel)</h3>
+                    <p class="text-gray-600 mb-4">
+We offer a world-class O Level program under both Cambridge Assessment International Education (CAIE) and Pearson Edexcel boards, ensuring global recognition and academic excellence.
+Boards Offered: Cambridge (CAIE) & Edexcel
+Subjects Offered:
+Core: English Language, Mathematics, Physics, Chemistry, Biology<br>
+Optional: Business Studies, Accounting, ICT, Economics and Geography.
+                    </p>
+                    </button>
+                </div>
+                
+                <!-- a-level-section -->
+                <div id="empty-service_box4" class="service-card bg-white p-6 rounded-lg shadow-md transition duration-300">
+                    <div class="text-blue-600 text-4xl mb-4">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">A Level Section (Cambridge & Edexcel)</h3>
+                    <p class="text-gray-600 mb-4">
+Our A Level program (Cambridge & Edexcel) provides advanced academic training and prepares students for top universities worldwide.
+Classes: A Level (Grade 11 – Grade 12)
+Boards Offered: Cambridge (CAIE) & Pearson Edexcel
+Subjects Offered:
+Science Stream: Physics, Chemistry, Biology, Mathematics, Further Mathematics, ICT. 
+Business & Humanities Stream: Business Studies, Economics, Accounting, Law, Psychology, Sociology
+Language & Additional: English Language, 
+Extensive practice with past papers & timed mock exams
+                    </p>
+                    </button>
+                </div>
+                
+                <!-- english-language-training -->
+                <div class="service-card bg-white p-6 rounded-lg shadow-md transition duration-300">
+                    <div class="text-blue-600 text-4xl mb-4">
+                        <i class="fa-solid fa-language"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">English Language Training</h3>
+                    <p class="text-gray-600 mb-4">
+We believe that mastering English opens doors to global opportunities. Our English Language Training programs are designed to help learners of all levels - from beginners to advanced - build strong communication, writing, and comprehension skills for both academic and professional success.
+What We Offer - 
+Spoken English Training: Improve fluency, pronunciation, and confidence in daily and professional conversations.
+Grammar & Vocabulary Mastery: Learn essential grammar rules and enrich your vocabulary for accurate and effective communication.
+Business English: Develop strong English skills for meetings, presentations, and workplace communication.
+                    </p>
+                    </button>
+                </div>
+                
+                <!-- academic-english -->
+                <div class="service-card bg-white p-6 rounded-lg shadow-md transition duration-300">
+                    <div class="text-blue-600 text-4xl mb-4">
+                        <i class="fa-solid fa-chalkboard-user"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Academic English</h3>
+                    <p class="text-gray-600 mb-4">
+Prepare for exams, essays, and international study requirements.<br>
+IELTS & English Proficiency Test Preparation: Get expert guidance and practice for top scores.<br>
+Why Choose Our English Training:<br>
+Expert and friendly trainers with real classroom and corporate experience.<br>
+Practical, interactive, and fun learning sessions.<br>
+Customized lessons for children, students, and professionals.<br>
+Online and in-person classes available.<br>
+Affordable fees with flexible class schedules.<br>
+Our Goal: To help every learner speak, write, and think in English with confidence - turning language learning into a life-changing skill.
+                    </p>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section id="why-choose-us" class="py-20 bg-gray-50">
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Why Choose Raydon Academy</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    <b>Here are the 10 reasons of why you should choose us:<br></b>
+1. We offer minimal admission and tuition fees for both English Version & Medium.<br>
+2. We provide world-class education with a personalized approach.<br>
+3. Our teachers are dedicated, qualified, and passionate about student success.<br>
+4. We focus on both academic excellence and character development.<br>
+5. Modern teaching methods make learning engaging and effective.<br>
+6. Students gain confidence, communication, and leadership skills.<br>
+7. We create a safe, supportive, and inspiring learning environment.<br>
+8. Technology-enhanced classrooms prepare students for the future.<br>
+9. Regular progress tracking ensures every student’s growth.<br>
+10. At Raydon Academy, we prepare learners not just for exams-but for life.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leaders Section -->
+    <section id="our-leadership" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Meet Our Leadership</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="p-6">
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="https://cdn.discordapp.com/attachments/963003603663065138/1424030110700277810/IMG-20251004-WA00012.jpg?ex=68e276e3&is=68e12563&hm=c635c31c6cbaac773641e9050a417be302cc50dc76e4f79d7c22ff7f168b4eec&" alt="Masoda Sultana" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-1">Masoda Sultana</h3>
+                        <p class="text-blue-600 mb-3">Founder & Director of Operations</p>
+                        <p class="text-gray-600 text-lg mb-4">
+I’m Masoda Sultana, the Director of Operations at Raydon Academy. With over 12 years of teaching experience in different reputed organisations and an MBA in Human Resource Management, I bring both academic expertise and strong leadership to the Academy.
+My journey as a teacher has taught me how to connect with students, understand their challenges, and design solutions that make learning easier. Now, in my role as Director of Operations, I focus on building effective teaching systems, supporting teachers, and ensuring smooth day-to-day management.
+I believe every student deserves quality education that is accessible, stress-free, and tailored to their growth. My role is to make sure our teachers have the tools, support, and motivation they need - so together we can deliver the best possible learning experience.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="https://media.discordapp.net/attachments/963003603663065138/1424366560327503912/IMG-20251004-WA00023.jpg?ex=68e3b03b&is=68e25ebb&hm=25db03f2e20d884a5da3a002b2b6479f14e90bd71f943d6b91f1150272f862ad&=&format=webp&width=655&height=656" alt="Azharul Kabir" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-1">Dr. Md. Azharul Kabir</h3>
+                        <p class="text-blue-600 mb-3">Co-founder & Director (Logistics & Institutional Affairs)</p>
+                        <p class="text-gray-600 text-lg mb-4">
+I’m Dr. Md. Azharul Kabir,<br> serving as Director of Logistics &<br> Institutional Affairs at<br> Raydon Academy.<br> My role is to ensure that every part of our academic and operational system - from technology to student support - runs smoothly and efficiently.
+With years of experience in institutional management, I specialize in planning, logistics, and creating strong support structures for both students and teachers. I focus on building reliable systems that make the Academy’s services seamless, whether classes are conducted online or in-person.
+I believe good logistics are the foundation of excellent education - when everything works in the background, students and teachers can focus on what matters most: learning and growth.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Enrollment Section -->
+<section id="enrollment" class="py-20 bg-blue-600 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="md:flex items-center">
+            
+            <!-- Left Side: Info -->
+            <div class="md:w-1/2 mb-10 md:mb-0">
+                <h2 class="text-3xl font-bold mb-4">Enroll Into Our School</h2>
+                <p class="text-lg mb-8 opacity-90">
+                    Ready to take the next step toward better education?<br>Fill the form on the right & we'll let you know right away!
+                </p>
+                <div class="flex items-center mb-6">
+                    <div class="bg-blue-700 w-14 h-14 flex items-center justify-center rounded-full mr-4">
+                        <i class="fa-solid fa-phone-volume text-2xl text-white"></i>
+                    </div>
+                    <div>
+                        <p class="text-sm opacity-80">Contact Us For Inquiries</p>
+                        <p class="text-xl font-semibold">+880 01712885643</p>
+                    </div>
+                </div>
+                <div class="flex items-center">
+                    <div class="bg-blue-700 w-14 h-14 flex items-center justify-center rounded-full mr-4">
+                        <i class="fas fa-clock text-4xl text-white"></i>
+                    </div>
+                    <div>
+                        <p class="text-sm opacity-80">Active Office Hours</p>
+                        <p class="text-xl font-semibold">Sunday - Thursday</p>
+                        <p class="text-xl font-semibold">10:00AM - 08:00PM</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Right Side: Google Form -->
+<div class="md:w-1/2 bg-white rounded-lg shadow-xl p-6">
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeFuZHt5-XIhwau_Z3fIzqIiv9FLJnmAkmhA4YZ8npHabnWWw/viewform?embedded=true" 
+            width="100%" 
+            height="720" 
+            frameborder="0" 
+            marginheight="0" 
+            marginwidth="0">
+        Loading…
+    </iframe>
+</div>
+
+        </div>
+    </div>
+</section>
+
+
+    <!-- About Section -->
+    <section id="about-us" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="md:flex items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-4">About Raydon Academy</h2>
+                    <p class="text-lg text-gray-600 mb-6">
+Raydon Academy is the first fully online English Version and English Medium school in Bangladesh, offering world-class education from primary to higher levels.<br>
+We provide both National (English Version) and Cambridge Curriculum/Pearson Edexcel (English Medium) education through a smart, interactive online system designed for modern learners.<br>
+<strong>In addition to school education</strong>, Raydon Academy proudly operates as a professional English Language Training Centre, helping students, professionals, and job seekers improve their speaking, writing, and communication skills.<br>
+Our mission is to make quality education and English training accessible to everyone - anytime, anywhere. With qualified teachers, affordable fees, and global learning standards, we prepare students for academic excellence and real-world success.<br>
+<strong>What Makes Us Unique:</strong><br>
+First online English Version & English Medium school in Bangladesh.<br>
+Dual focus: Academic education + English language mastery.<br>
+Highly qualified and experienced teachers.<br>
+Interactive online classes with modern learning tools.<br>
+Affordable and flexible learning for all age groups.<br>
+                    </p>
+                </div>
+                <div class="md:w-1/2">
+                    <div class="grid grid-cols-2 gap-4">
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact-us" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Contact Us</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    We're here to answer your questions and help you with your questions.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+                <div class="bg-blue-50 p-8 rounded-lg text-center">
+                    <div class="text-blue-600 text-3xl mb-4">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Our Location</h3>
+                    <p class="text-gray-600">
+                        Mirpur 10, Dhaka 1216,<br>
+                        Bangladesh
+                    </p>
+                </div>
+                
+                <div class="bg-blue-50 p-8 rounded-lg text-center">
+                    <div class="text-blue-600 text-3xl mb-4">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Our Numbers</h3>
+                    <p class="text-gray-600 mb-1">
+                        <strong>Phone:</strong> +880 1712885643<br>
+                        <strong>WhatsApp:</strong> +880 1638344165
+                    </p>
+                </div>
+                
+                <div class="bg-blue-50 p-8 rounded-lg text-center">
+                    <div class="text-blue-600 text-3xl mb-4">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Email Us</h3>
+                    <p class="text-gray-600 mb-1">
+                        <strong></strong> contact@raydonacademy.com
+                    </p>
+                </div>
+            </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <div class="logo-container flex items-center mb-4">
+                        <div class="logo-circle">
+                            <div class="logo-cross">+</div>
+                        </div>
+                        <span class="text-2xl font-bold text-white">Raydon Academy</span>
+                    </div>
+                    <p class="text-gray-400 mb-4">
+                        .
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-white">Home</a></li>
+                        <li><a href="#our-services" class="text-gray-400 hover:text-white">Our Services</a></li>
+                        <li><a href="#why-choose-us" class="text-gray-400 hover:text-white">Why Choose Us</a></li>
+                        <li><a href="#our-leadership" class="text-gray-400 hover:text-white">Our Leadership</a></li>
+                        <li><a href="#enrollment" class="text-gray-400 hover:text-white">Enroll Into Our School</a></li>
+                        <li><a href="#about-us" class="text-gray-400 hover:text-white">About Us</a></li>
+                        <li><a href="#contact-us" class="text-gray-400 hover:text-white">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Contact Info</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-3 text-blue-400"></i>
+                            <span>Mirpur 10, Dhaka 1216, Bangladesh</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fa-solid fa-phone-volume mr-3 text-blue-400"></i>
+                            <span>+880 01712885643</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-3 text-blue-400"></i>
+                            <span>contact@raydonacademy.com</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-clock mr-3 text-blue-400"></i>
+                            <span>Sunday - Thursday<br> 10:00AM - 08:00PM</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 mb-4 md:mb-0">
+                    &copy; 2025 Raydon Academy. All rights reserved.
+                </p>
+                <div class="flex space-x-6">
+                    <a href="" class="text-gray-400 hover:text-white">Privacy Policy</a>
+                    <a href="" class="text-gray-400 hover:text-white">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+<!-- Rest of your code (Hero, Services, Why Us, Leadership, Enrollment, About, Contact, Footer) remains mostly same -->
+<!-- I just removed broken buttons and bumped text sizes in <h2>, <p>, etc. -->
+
+<script>
+  // Mobile menu toggle
+  const btn = document.querySelector(".mobile-menu-button");
+  const menu = document.querySelector(".mobile-menu");
+  btn.addEventListener("click", () => menu.classList.toggle("hidden"));
+</script>
+</body>
+</html>
